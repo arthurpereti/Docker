@@ -1,0 +1,31 @@
+nomesemaspas: Matheus
+nomecomaspas: "Matheus"
+idade: 30
+verdadeiro: ON
+falso: OFF
+verdadeiro2: TRUE
+falso2: FALSE
+
+# Este objeto descreve o nosso projeto
+objeto:
+  versao: 2
+  versao_completa: 2.5
+  arquivo: "teste.txt"
+
+nulo: ~
+nulo2: NULL
+
+lista: [1,2,3,4,5]
+
+lista2:
+  - 1
+  - 2
+  - 3
+  - 4 
+
+obj: {a: 1, b: 2, c: 3}
+
+obj2: 
+  a: 1
+  b: 2
+
