@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  db:
+    build: ./mysql/ # Podemos colocar build: (PATH), para ele fazer o build da imagem todas as vezes que o compose subir
+    restart: always 
+    env_file:
+      - C:\progs_arthurpereti\Docker\5_Compose\4_Projeto\config\db.env
+    ports:
+      - "3306:3306"
+    networks:
+      - dockercompose
+
+  backend:
+    depends_on:
+      - db
+    build: ./flask/
+    ports:
+      - "5000:5000"
+    restart: always
+    networks: 
+    - dockercompose
+
+networks:
+  dockercompose:

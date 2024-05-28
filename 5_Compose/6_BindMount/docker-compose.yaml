@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  db:
+    build: ./mysql/ 
+    restart: always 
+    env_file:
+      - C:\progs_arthurpereti\Docker\5_Compose\4_Projeto\config\db.env
+    ports:
+      - "3306:3306"
+    networks:
+      - dockercompose
+
+  backend:
+    depends_on:
+      - db
+    build: ./flask/
+    volumes:
+      - "C:\\progs_arthurpereti\\Docker\\5_Compose\\6_BindMount\\flask:/app"
+    ports:
+      - "5000:5000"
+    restart: always
+    networks: 
+    - dockercompose
+
+networks:
+  dockercompose:
