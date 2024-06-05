@@ -1,0 +1,8 @@
+# Compose feito para testar o comando " docker stack deploy " no swarm
+version: "3.3"
+
+services:
+  web:
+    image: nginx
+    ports:
+      - 80:80 
